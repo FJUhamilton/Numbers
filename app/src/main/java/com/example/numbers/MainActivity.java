@@ -11,12 +11,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView numbers;
 
     public TextView Number;
+    public Button zero;
     private int num;
 
     @Override
@@ -35,22 +37,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
               int num = Integer.parseInt(numbers.getText().toString());
               num++;
-              numbers.setText(""+num);
+              numbers.setText(String.valueOf(num));
             }
-        });
-    }
 
+        });
+
+
+    }
+    public void tozero(View view) {
+        num =0;
+        numbers.setText(String.valueOf(num));
+    }
     @Override
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-    public void numbers(){
 
-
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
